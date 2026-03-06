@@ -54,4 +54,31 @@ SELECT
   ) AS repeat_purchase_rate
 FROM customer_orders;
 
+--Monthly Growth
 
+WITH monthly_data AS (
+  SELECT
+    DATE_TRUNC(purchase_date, MONTH) AS month,
+    SUM(revenue) AS monthly_revenue
+  FROM ecommerce_analysis.transactions
+  GROUP BY month
+),
+
+monthly_with_lag AS (
+  SELECT
+    month,
+    monthly_revenue,
+    LAG(monthly_revenue) OVER (ORDER BY month) AS previous_month_revenue
+  FROM monthly_data
+)
+
+SELECT
+  month,
+  monthly_revenue,
+  previous_month_revenue,
+  SAFE_DIVIDE(
+    monthly_revenue - previous_month_revenue,
+    previous_month_revenue
+  ) AS monthly_growth_rate
+FROM monthly_with_lag
+ORDER BY month;
