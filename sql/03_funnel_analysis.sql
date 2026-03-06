@@ -1,4 +1,8 @@
---Funnel Analysis
+-- This file analyzes user behavior across the e-commerce
+-- purchase funnel and marketing channels.
+
+-- Purchase Funnel Analysis
+-- Measures user progression through the shopping funnel
 WITH funnel AS (
   SELECT
     COUNTIF(product_views > 0) AS product_view_sessions,
@@ -14,7 +18,8 @@ SELECT *,
   SAFE_DIVIDE(purchase_sessions, checkout_sessions) AS checkout_to_purchase_rate
 FROM funnel;
 
---Channel Performance
+-- Marketing Channel Performance
+-- Evaluates traffic sources by revenue and conversion
 
 SELECT
   source,
