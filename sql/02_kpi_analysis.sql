@@ -6,7 +6,7 @@ SELECT
   (SELECT COUNT(*) FROM ecommerce_analysis.transactions) AS total_orders,
 
   (SELECT COUNT(DISTINCT user_pseudo_id)
-   FROM ecommerce_analysis.sessions) AS total_users
+   FROM ecommerce_analysis.sessions) AS total_users;
 
 -- Average Order Value (AOV) using session revenue
 -- AOV = Total Revenue / Number of Purchasing Sessions
