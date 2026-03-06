@@ -1,4 +1,5 @@
 -- Core KPIs
+-- Calculates overall revenue, orders, and user count
 SELECT
   (SELECT SUM(revenue) FROM ecommerce_analysis.transactions) AS total_revenue,
 
@@ -7,7 +8,8 @@ SELECT
   (SELECT COUNT(DISTINCT user_pseudo_id)
    FROM ecommerce_analysis.sessions) AS total_users
 
--- AOV using session revenue
+-- Average Order Value (AOV) using session revenue
+-- AOV = Total Revenue / Number of Purchasing Sessions
 
 SELECT
   SUM(session_revenue) AS total_revenue,
@@ -18,14 +20,16 @@ SELECT
   ) AS avg_order_value
 FROM `ecommerce_analysis.sessions`;
 
--- AOV using transactions
+-- Average Order Value (AOV) using transaction table
+-- AOV = Total Revenue / Total Transactions
 SELECT
   COUNT(*) AS total_transactions,
   SUM(revenue) AS total_revenue,
   SAFE_DIVIDE(SUM(revenue), COUNT(*)) AS avg_order_value
 FROM ecommerce_analysis.transactions;
 
--- Session conversion rate 
+-- Session Conversion Rate
+-- Conversion Rate = Purchasing Sessions / Total Sessions
 
 SELECT
   COUNT(DISTINCT session_id) AS total_sessions,
@@ -36,7 +40,8 @@ SELECT
   ) AS conversion_rate
 FROM `ecommerce_analysis.sessions`;
 
---Repeat Purchase Rate
+-- Repeat Purchase Rate
+-- Percentage of customers who made more than one purchase
 WITH customer_orders AS (
   SELECT
     user_pseudo_id,
@@ -54,8 +59,8 @@ SELECT
   ) AS repeat_purchase_rate
 FROM customer_orders;
 
---Monthly Growth
-
+-- Monthly Revenue Growth
+-- Calculates month-over-month revenue growth
 WITH monthly_data AS (
   SELECT
     DATE_TRUNC(purchase_date, MONTH) AS month,
