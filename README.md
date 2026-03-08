@@ -52,6 +52,8 @@ Key tables created:
 * **transactions** – purchase-level transaction data
 * **user_summary** – aggregated customer metrics
 
+[SQL CODES HERE](https://github.com/grittalikestocode/End-to-End-Ecommerce-Analysis/tree/main/sql/01_data_preparation)
+
 ---
 
 ## Key Analyses
