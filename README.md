@@ -157,11 +157,13 @@ End-to-End-Ecommerce-Analysis
 │   ├── 03_funnel_analysis.sql
 │   └── 04_customer_analysis.sql
 │
-├── analysis
-│   └── ecommerce_analysis_report.md
+├── Report
+    ├── Website
+│   └── Preview.md
 │
-├── dashboards
-│   └── dashboard_screenshots
+├── dashboard
+    ├──
+│   └── Link
 │
 └── README.md
 ```
