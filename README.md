@@ -8,6 +8,9 @@ The goal of the project is to extract **actionable business insights** from user
 
 The dataset used is the **Google Analytics 4 (GA4) Google Merchandise Store dataset** available in BigQuery.
 
+Links:
+* [Analysis Report](https://orange-hall-dcf.notion.site/End-to-End-E-commerce-Analytics-Report-31ce5ae9206580149d24d5ad7bfce98b?pvs=74)
+* [Looker Dashboard](https://lookerstudio.google.com/reporting/6eeeef92-c9b1-4837-a67c-e39c916dad08/)
 ---
 
 ## Tools & Technologies
