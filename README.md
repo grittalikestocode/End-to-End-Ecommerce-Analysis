@@ -51,7 +51,6 @@ Key tables created:
 * **sessions** – session-level user activity
 * **transactions** – purchase-level transaction data
 * **user_summary** – aggregated customer metrics
-* **user_first_purchase** – first purchase dates for cohort analysis
 
 ---
 
