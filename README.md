@@ -162,8 +162,8 @@ End-to-End-Ecommerce-Analysis
 │   └── Preview.md
 │
 ├── dashboard
-    ├──
-│   └── Link
+    ├── Ecommerce_Dashboard.pdf
+│   └── Looker
 │
 └── README.md
 ```
